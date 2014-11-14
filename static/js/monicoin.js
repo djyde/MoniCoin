@@ -1,8 +1,17 @@
 angular.module('MoniCoin',[])
 	.controller('TradeController',['$scope',function($scope){
+		
 		//最新成交价
-		$scope.price = 777;
-
+		var ws = new WebSocket('wss://real.okcoin.cn:10440/websocket/okcoinapi');
+		ws.onopen = function(event){
+			ws.send("{'event':'addChannel','channel':'ok_btccny_ticker'}");
+			ws.onmessage = function(event){
+				var data = JSON.parse(event.data)[0].data.sell;
+				$scope.$apply(function(){
+					$scope.price = data;
+				})
+			}
+		}
 		if(!localStorage.bitcoin){
 			localStorage.bitcoin = 0;
 		}
