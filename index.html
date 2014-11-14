@@ -16,7 +16,7 @@
         <span>资产：<span class="sole">{{property}}</span> 元</span>
       </p>
       <p class="small">
-        <span>比特币：<span class="sole">{{bitcoin | number: 3}}</span> 个</span>
+        <span>比特币：<span class="sole" ng-model="bitcoin">{{bitcoin | number: 3}}</span> 个</span>
       </p>
     </header>
 
@@ -62,8 +62,9 @@
 
     </div>
 
-    <footer>
-      <span class="small">MoniCoin 虚拟比特币交易 - By Randy</span>
+    <footer class="small">
+      <span>MoniCoin 虚拟比特币交易 - By Randy</span>
+      <p><a href="#" ng-click="reset()">重置数据</a></p>
     </footer>
   </body>
 </html>

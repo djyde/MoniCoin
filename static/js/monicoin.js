@@ -12,16 +12,13 @@ angular.module('MoniCoin',[])
 				})
 			}
 		}
-		if(!localStorage.bitcoin){
-			localStorage.bitcoin = 0;
-		}
 
-		if(!localStorage.property){
-			localStorage.property = 0;
-		}
+
 
 		//最新数据
 		function init(){
+			if(!localStorage.property) localStorage.property=0;
+			if(!localStorage.bitcoin) localStorage.bitcoin=0;
 			$scope.trades = storedb('trade').find();
 			$scope.property = localStorage.property;
 			$scope.bitcoin = localStorage.bitcoin;
@@ -45,6 +42,7 @@ angular.module('MoniCoin',[])
 			})
 			localStorage.property = parseFloat(localStorage.property) - parseFloat(price * count);
 			localStorage.bitcoin = parseFloat(localStorage.bitcoin) + parseFloat(count);
+
 			init();
 
 		}
@@ -60,6 +58,12 @@ angular.module('MoniCoin',[])
 			})
 			localStorage.property = parseFloat(localStorage.property) + parseFloat(price * count);
 			localStorage.bitcoin = parseFloat(localStorage.bitcoin) - parseFloat(count);
+			init();
+		}
+
+		//重置数据
+		$scope.reset = function(){
+			localStorage.clear();
 			init();
 		}
 
