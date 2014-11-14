@@ -28,7 +28,7 @@
             <h3>买入</h3>
             <input class="in" type="text" placeholder="输入买入个数" ng-model="buy_count" />
             <button class="btn" ng-click="buy(price,buy_count)">Buy</button>
-            <p class="buy">123.3</p>
+            <p class="buy">{{buy_count * price}}</p>
           </li>
 
           <li>
@@ -45,7 +45,7 @@
         <table style="text-align: center;">
           <thead>
             <th>操作</th>
-            <th>币数</th>
+            <th>数量</th>
             <th>资产流动</th>
             <th>交易时间</th>
           </thead>

@@ -19,11 +19,16 @@ header{
 footer{
 	margin-top: 20px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 h3{
 	margin: 0;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+table td{
+	padding: 5px;
 }
 
 .in{
@@ -60,7 +65,7 @@ h3{
 
 #trade{
 	overflow: hidden; 
-	width: 500px;
+	width: 550px;
 	margin: auto;
 	margin-top: 10px;
 }

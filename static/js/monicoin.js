@@ -18,6 +18,11 @@ angular.module('MoniCoin',[])
 			$scope.bitcoin = localStorage.bitcoin;
 		}
 
+		function now(){
+			var d = new Date();
+			return d.getFullYear().toString()+ "-" +d.getMonth() +"-" +d.getDate() + " "+d.getHours() +" : " + d.getMinutes()+" : " + d.getSeconds()
+		}
+
 		init();
 
 		//买入操作
@@ -26,7 +31,7 @@ angular.module('MoniCoin',[])
 				"type": "buy",
 				"count": count,
 				"money": - price * count,
-				"date": 2012
+				"date": now()
 			})
 			localStorage.property = parseInt(localStorage.property) - parseInt(price * count);
 			localStorage.bitcoin = parseInt(localStorage.bitcoin) + parseInt(count);
@@ -40,7 +45,7 @@ angular.module('MoniCoin',[])
 				"type": "sole",
 				"count": count,
 				"money": price * count,
-				"date": 2012
+				"date": now()
 			})
 			localStorage.property = parseInt(localStorage.property) + parseInt(price * count);
 			localStorage.bitcoin = parseInt(localStorage.bitcoin) - parseInt(count);
