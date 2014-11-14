@@ -39,11 +39,12 @@ angular.module('MoniCoin',[])
 			storedb('trade').insert({
 				"type": "buy",
 				"count": count,
+				"price": price,
 				"money": - price * count,
 				"date": now()
 			})
-			localStorage.property = parseInt(localStorage.property) - parseInt(price * count);
-			localStorage.bitcoin = parseInt(localStorage.bitcoin) + parseInt(count);
+			localStorage.property = parseFloat(localStorage.property) - parseFloat(price * count);
+			localStorage.bitcoin = parseFloat(localStorage.bitcoin) + parseFloat(count);
 			init();
 
 		}
@@ -53,11 +54,12 @@ angular.module('MoniCoin',[])
 			storedb('trade').insert({
 				"type": "sole",
 				"count": count,
+				"price": price,
 				"money": price * count,
 				"date": now()
 			})
-			localStorage.property = parseInt(localStorage.property) + parseInt(price * count);
-			localStorage.bitcoin = parseInt(localStorage.bitcoin) - parseInt(count);
+			localStorage.property = parseFloat(localStorage.property) + parseFloat(price * count);
+			localStorage.bitcoin = parseFloat(localStorage.bitcoin) - parseFloat(count);
 			init();
 		}
 

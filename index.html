@@ -16,7 +16,7 @@
         <span>资产：<span class="sole">{{property}}</span> 元</span>
       </p>
       <p class="small">
-        <span>比特币：<span class="sole">{{bitcoin}}</span> 个</span>
+        <span>比特币：<span class="sole">{{bitcoin | number: 3}}</span> 个</span>
       </p>
     </header>
 
@@ -28,14 +28,14 @@
             <h3>买入</h3>
             <input class="in" type="text" placeholder="输入买入个数" ng-model="buy_count" />
             <button class="btn" ng-click="buy(price,buy_count)">Buy</button>
-            <p class="buy">{{buy_count * price}}</p>
+            <p class="buy">{{buy_count * price | number: 1}}</p>
           </li>
 
           <li>
             <h3>卖出</h3>
             <input class="in" type="text" placeholder="输入卖出个数" ng-model="sole_coin" />
             <button class="btn" ng-click="sole(price,sole_coin)">Sole</button>
-            <p class="sole">{{ sole_coin * price }}</p>
+            <p class="sole">{{ sole_coin * price | number: 1}}</p>
           </li>
         </ul>
       </div>
@@ -46,13 +46,15 @@
           <thead>
             <th>操作</th>
             <th>数量</th>
+            <th>单价</th>
             <th>资产流动</th>
             <th>交易时间</th>
           </thead>
           <tr ng-repeat="trade in trades">
             <td class="{{trade.type}}">{{trade.type}}</td>
             <td>{{trade.count}}</td>
-            <td class="{{trade.type}}">{{trade.money}}</td>
+            <td>{{trade.price | number: 1}}</td>
+            <td class="{{trade.type}}">{{trade.money | number: 1}}</td>
             <td>{{trade.date}}</td>
           </tr>
         </table>
