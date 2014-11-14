@@ -4,6 +4,11 @@ body{
 	padding-top: 120px;
 }
 
+a{
+	text-decoration: none;
+	color: black;
+}
+
 header{
 	font-size: 72px;
 	text-align: center;
@@ -12,6 +17,7 @@ header{
 }
 
 footer{
+	margin-top: 20px;
 	text-align: center;
 }
 
@@ -31,12 +37,12 @@ h3{
 
 }
 
-.green{
+.sole{
 	color: green;
 	font-weight: bold;
 }
 
-.red{
+.buy{
 	color: red;
 	font-weight: bold;
 }
