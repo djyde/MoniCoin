@@ -1,0 +1,60 @@
+body{
+	width: 960px;
+	margin: auto;
+	padding-top: 120px;
+}
+
+header{
+	font-size: 72px;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 50px;
+}
+
+footer{
+	text-align: center;
+}
+
+h3{
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.in{
+	padding: 5px;
+	width: 100px;
+}
+
+.small{
+	font-size: 12px;
+	color: gray;
+
+}
+
+.green{
+	color: green;
+	font-weight: bold;
+}
+
+.red{
+	color: red;
+	font-weight: bold;
+}
+
+.btn{
+	padding: 7px;
+}
+
+#list{
+	list-style: none;
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+#trade{
+	overflow: hidden; 
+	width: 500px;
+	margin: auto;
+	margin-top: 10px;
+}
