@@ -1,7 +1,7 @@
 MoniCoin
 ========
 
-MoniCoin 是一个虚拟比特币交易应用。交易数据使用 [StoreDB](https://github.com/djyde/StoreDB) (localStorage) 存储于本地，整体使用 AngularJS，页面完全静态。
+[MoniCoin](http://djyde.github.io/MoniCoin) 是一个虚拟比特币交易应用。交易数据使用 [StoreDB](https://github.com/djyde/StoreDB) (localStorage) 存储于本地，整体使用 AngularJS，页面完全静态。
 
 ScreenShot
 ======
